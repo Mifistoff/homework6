@@ -23,6 +23,10 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
   gem 'pry-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'rails-controller-testing',
+    git: 'https://github.com/rails/rails-controller-testing'
 end
 
 group :development do
