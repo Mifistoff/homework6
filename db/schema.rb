@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20170623151730) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.text "body"
     t.bigint "user_id"
     t.bigint "admin_id"
