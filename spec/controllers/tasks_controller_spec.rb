@@ -17,9 +17,8 @@ RSpec.describe TasksController, type: :controller do
   before { sign_in user }
 
   describe "GET #index" do
-    before {
-      valid_task
-    }
+    before { valid_task }
+
     it "returns a success response" do
       get :index, params: {}, session: valid_session
       expect(response).to be_success
