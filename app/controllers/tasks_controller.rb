@@ -11,9 +11,6 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
-  def edit
-  end
-
   def create
     @task = Task.new(task_params)
     if @task.save
@@ -21,19 +18,6 @@ class TasksController < ApplicationController
     else
       render action: 'new'
     end
-  end
-
-  def update
-    if @task.update(task_params)
-      redirect_to [:edit, @task]
-    else
-      render action: 'edit'
-    end
-  end
-
-  def destroy
-    @task.destroy
-    redirect_to :tasks
   end
 
   private

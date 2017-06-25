@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   authenticated :admin do
     namespace :admin do
       root 'tasks#index'
-      resources :admins
+      resources :admins, only: %i[index show new create]
       resource :dashboard, only: %i[show], controller: :dashboard
       resources :tasks, only: %i[index show update] do
         resources :comments, only: %i[new create]

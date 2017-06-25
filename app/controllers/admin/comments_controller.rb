@@ -1,6 +1,5 @@
 class Admin::CommentsController < ActionController::Base
   def new
-    @comment = @task.comments.new
   end
 
   def create
