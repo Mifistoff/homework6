@@ -1,26 +1,26 @@
 class Api::V1::TasksController < ApplicationController
-  def new
-    @task = Task.new
+  # GET /tasks
+  def index
+    @tasks = Task.all
+    render json: @tasks
   end
 
+  # POST /tasks
   def create
-    @task = Task.new(task_params)
-    if @task.save
-      redirect_to :tasks
-    else
-      render action: 'new'
-    end
+    @task = Task.create!(task_params)
+    render json: @task, status: :created
   end
-  
+
+  # GET /tasks/:id
+  def show
+    render json: @task
+  end
+
   private
 
   def task_params
-    params.require(:task).permit(
-    :name,
-    :body,
-    :user_id,
-    :admin_id,
-    :status
-    )
+    # whitelist params
+    params.permit(:title, :body).merge(user_id: current_user.id)
   end
+end
 end

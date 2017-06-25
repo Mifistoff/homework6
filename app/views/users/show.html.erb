@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email</strong>
+  <%= current_user.email %>
+</p>
+
+<p>
+  <strong>Registration date</strong>
+  <%= current_user.created_at %>
+</p>
+
+<%= link_to 'Back', root_path %>

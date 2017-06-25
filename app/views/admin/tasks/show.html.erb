@@ -23,9 +23,10 @@
 <p>
   <strong>Status:</strong>
   <%= @task.status %>
+  <%= link_to 'Change status', admin_task_path(@task), method: :patch %>
 </p>
 
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Back', admin_tasks_path %>
 
-<%= render file: 'comments/index.html.erb' %>
-<%= render file: 'comments/new.html.erb' if @task.status == 'active' %>
+<%= render file: 'admin/comments/index.html.erb' %>
+<%= render file: 'admin/comments/new.html.erb' %>

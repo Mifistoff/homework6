@@ -1,9 +1,10 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = Task.where(user_id: current_user.id).all
   end
 
   def show
+    @task = Task.find(params[:id])
   end
 
   def new
@@ -16,7 +17,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
-      redirect_to :tasks
+      redirect_to @task
     else
       render action: 'new'
     end
@@ -38,12 +39,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(
-    :name,
-    :body,
-    :user_id,
-    :admin_id,
-    :status
-    )
+    params.require(:task).permit(:title, :body).merge(user_id: current_user.id)
   end
 end

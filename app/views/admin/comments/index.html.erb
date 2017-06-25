@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Comments</h1>
+<table>
+  <% @task.comments.each do |comment| %>
+    <tr>
+      <th><%= comment.commentator.email %></th>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td><%= comment.body %></td>
+    </tr>
+  <% end %>
+</table>

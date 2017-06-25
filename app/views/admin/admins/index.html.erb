@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Registration date</th>
+      <th>Supported tasks</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admins.each do |admin| %>
+      <tr>
+        <td><%= admin.email %></td>
+        <td><%= admin.created_at %></td>
+        <td><%= admin.tasks.count %></td>
+        <td><%= admin.comments.count %></td>
+        <td><%= link_to 'Show', "admins/#{admin.id}" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Create New Admin', new_admin_admin_path %>

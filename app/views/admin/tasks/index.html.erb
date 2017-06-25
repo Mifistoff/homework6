@@ -22,12 +22,8 @@
         <td><%= User.find(task.user_id).email %></td>
         <td><%= task.admin_id.nil? ? 'No Supported Admin' : Admin.find(task.admin_id).email%></td>
         <td><%= task.status %></td>
-        <td><%= link_to 'Show', task %></td>
+        <td><%= link_to 'Show', admin_task_path(task.id) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Task', new_task_path %>
