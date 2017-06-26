@@ -3,5 +3,9 @@ class Task < ApplicationRecord
   belongs_to :admin, optional: :true
   has_many :comments, dependent: :destroy
 
-  enum status: { active: 0, closed: 1 }
+  enum status: [ :active, :closed ]
+
+  def change_status
+    active? ? closed! : active!
+  end
 end
