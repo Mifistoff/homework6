@@ -16,6 +16,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'slim', '~> 3.0', '>= 3.0.6'
 gem 'slim-rails', '~> 3.0', '>= 3.0.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'bootstrap'
 
 # ===== auth =====
 gem 'devise'
