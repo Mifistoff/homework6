@@ -1,4 +1,4 @@
-class TasksController < BaseUserController
+class TasksController < BaseControllers::BaseUserController
   def index
     @tasks = current_user.tasks
   end

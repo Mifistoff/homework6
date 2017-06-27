@@ -1,2 +1,2 @@
-class UsersController < BaseUserController
+class UsersController < BaseControllers::BaseUserController
 end

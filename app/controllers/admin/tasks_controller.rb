@@ -1,4 +1,4 @@
-class Admin::TasksController < BaseAdminController
+class Admin::TasksController < BaseControllers::BaseAdminController
   def index
     @tasks = Task.all
   end

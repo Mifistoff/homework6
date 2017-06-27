@@ -1,2 +1,2 @@
-class StaticPagesController < BaseHomepageController
+class BaseControllers::BaseHomepageController < BaseHomepageController
 end
