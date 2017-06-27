@@ -1,5 +1,2 @@
-class StaticPagesController < ApplicationController
-  layout "application_homepage"
-  def home
-  end
+class StaticPagesController < BaseHomepageController
 end
