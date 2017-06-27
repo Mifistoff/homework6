@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MvcDemo</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <p> USER LAYOUT </p>
+  <%= render file: 'dashboard/show' if !current_user.nil? %>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
