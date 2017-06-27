@@ -1,0 +1,11 @@
+p#notice=notice
+
+h1 Comments
+table
+  - @task.comments.each do |comment|
+    tr
+      th= comment.commentator.email
+
+    tr
+      td
+      td= comment.body

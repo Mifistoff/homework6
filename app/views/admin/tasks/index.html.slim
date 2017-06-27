@@ -1,0 +1,20 @@
+p#notice=notice
+
+h1 Tasks
+table
+  thead
+    tr
+      th Title
+      th Body
+      th User
+      th Admin
+      th Status
+  tbody 
+  - @tasks.each do |task|
+    tr
+      td = task.title
+      td = task.body
+      td = task.user.email
+      td = task.supported_admin
+      td = task.status
+      td = link_to 'Show', admin_task_path(task)

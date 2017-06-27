@@ -1,0 +1,27 @@
+p#notice=notice
+
+p
+  strong Title: 
+  = @task.title
+
+p
+  strong Body: 
+  = @task.body
+
+p
+  strong User: 
+  = @task.user.email
+
+p
+  strong Admin: 
+  = @task.supported_admin
+
+p
+  strong Status: 
+  = @task.status
+  = link_to 'Change status', admin_task_path(@task), method: :patch
+
+= link_to 'Back', admin_tasks_path
+
+= render file: 'comments/index'
+= render file: 'admin/comments/new'

@@ -1,0 +1,26 @@
+p#notice=notice
+
+p
+  strong Title: 
+  = @task.title
+
+p
+  strong Body: 
+  = @task.body
+
+p
+  strong User: 
+  = @task.user.email
+
+p
+  strong Admin: 
+  = @task.supported_admin
+
+p
+  strong Status: 
+  = @task.status
+
+= link_to 'Back', tasks_path
+
+= render file: 'comments/index'
+= render file: 'comments/new' if @task.status == 'active'

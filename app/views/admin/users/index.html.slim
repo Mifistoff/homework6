@@ -1,0 +1,22 @@
+p#notice=notice
+
+h1 Users
+
+table
+  thead
+    tr
+      th Email
+      th Registration date
+      th Users tasks
+      th Comments
+
+  tbody
+    - @users.each do |user|
+      tr
+        td= user.email 
+        td= user.created_at 
+        td= user.tasks.count 
+        td= user.comments.count 
+        td= link_to 'Show', "users/#{user.id}" 
+
+= link_to 'Create New User', new_admin_user_path
