@@ -10,6 +10,6 @@ class Task < ApplicationRecord
   end
 
   def supported_admin
-   admin ? admin.email : 'No supported admin'
+   admin ? admin.email : I18n.t('no_supported_admin')
   end
 end

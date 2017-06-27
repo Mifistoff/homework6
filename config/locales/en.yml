@@ -30,4 +30,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  no_supported_admin: 'No supported admin'
+  you_are_logged_in_as: 'You are logged in as'
