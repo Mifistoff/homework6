@@ -19,8 +19,8 @@
       <tr>
         <td><%= task.title %></td>
         <td><%= task.body %></td>
-        <td><%= User.find(task.user_id).email %></td>
-        <td><%= task.admin_id.nil? ? 'No Supported Admin' : Admin.find(task.admin_id).email%></td>
+        <td><%= task.user.email %></td>
+        <td><%= task.supported_admin %></td>
         <td><%= task.status %></td>
         <td><%= link_to 'Show', admin_task_path(task.id) %></td>
       </tr>

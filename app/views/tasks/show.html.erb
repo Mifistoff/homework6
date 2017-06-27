@@ -12,12 +12,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= User.find(@task.user_id).email %>
+  <%= @task.user.email %>
 </p>
 
 <p>
   <strong>Admin:</strong>
-  <%= @task.admin_id.nil? ? 'No Supported Admin' : Admin.find(@task.admin_id).email %>
+  <%= @task.supported_admin %>
 </p>
 
 <p>

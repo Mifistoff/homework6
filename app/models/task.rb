@@ -8,4 +8,8 @@ class Task < ApplicationRecord
   def change_status
     active? ? closed! : active!
   end
+
+  def supported_admin
+   admin ? admin.email : 'No supported admin'
+  end
 end
