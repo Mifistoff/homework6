@@ -1,3 +1,3 @@
 class BaseHomepageController < ApplicationController
-  layout "application_homepage"
+  layout "homepage"
 end
