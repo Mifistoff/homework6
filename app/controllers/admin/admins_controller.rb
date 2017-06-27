@@ -1,13 +1,10 @@
-class Admin::AdminsController < ApplicationController
+class Admin::AdminsController < BaseAdminController
   def index
     @admins = Admin.all
   end
 
   def show
     @admin = Admin.find(params[:id])
-  end
-
-  def new
   end
 
   def create

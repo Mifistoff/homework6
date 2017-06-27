@@ -1,4 +1,4 @@
-class Admin::CommentsController < ActionController::Base
+class Admin::CommentsController < BaseAdminController
   def create
     @task = Task.find(params[:task_id])
     @comment = @task.comments.create!(comment_params)
