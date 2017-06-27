@@ -1,3 +1,3 @@
 class BaseControllers::BaseUserController < ApplicationController
-  layout "user"
+  layout 'user'
 end
