@@ -5,22 +5,9 @@ class Api::V1::TasksController < ApplicationController
     render json: @tasks
   end
 
-  # POST /tasks
-  def create
-    @task = Task.create!(task_params)
-    render json: @task, status: :created
-  end
-
   # GET /tasks/:id
   def show
+    @task = Task.find(params[:id])
     render json: @task
   end
-
-  private
-
-  def task_params
-    # whitelist params
-    params.permit(:title, :body).merge(user_id: current_user.id)
-  end
-end
 end
