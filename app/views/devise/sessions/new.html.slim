@@ -1,22 +1,19 @@
-h2 Log in
+h4.text-center Log in
+div.panel.login-form-panel
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  
+    .form-group
+      label Email
+      = f.email_field :email, autofocus: true, class: 'form-control'
 
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    label Email
-    = f.email_field :email, autofocus: true
+    .form-group
+      label Password
+      = f.password_field :password, autocomplete: "off", class: 'form-control'
 
-  .field
-    label Password
-    = f.password_field :password, autocomplete: "off"
+    - if devise_mapping.rememberable?
+    .form-group
+      = f.check_box :remember_me
+      label Remember me
 
-  - if devise_mapping.rememberable?
-  .field
-    = f.check_box :remember_me
-    label Remember me
-
-  .action
-    = f.submit "Log in"
-    
-br
-= render "devise/shared/links"
-= link_to "Return to homepage", root_path
+    .action
+      = f.submit "Log in", class: 'btn btn-primary'

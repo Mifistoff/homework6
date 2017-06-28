@@ -5,6 +5,9 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    p Homepage layout
-    
+    .row.info-panel.sign-up-panel
+      p= link_to fa_icon("home", text: "Home"), root_path, method: :get, class: 'btn btn-info homepage'
+      p= link_to fa_icon("github", text: "Sign in with GitHub"), user_github_omniauth_authorize_path, class: 'btn btn-info sign-up-github'
+      p= link_to fa_icon("user-plus", text: "Sign up now"), new_user_registration_path, method: :get, class: 'btn btn-info sign-up'
+
   body= yield

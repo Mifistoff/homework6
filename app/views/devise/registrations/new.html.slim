@@ -1,28 +1,21 @@
-h2 Sign up
+h4.text-center Sign up
+div.panel.signup-form-panel
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
 
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
+    .form-group
+      Label Email
+      = f.email_field :email, autofocus: true, class: 'form-control'
 
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true
+    .form-group
+      Label Password
+      - if @minimum_password_length
+      em= " (#{@minimum_password_length} characters minimum)"
+      = f.password_field :password, autocomplete: "off", class: 'form-control'
 
-  .field
-    = f.label :password
-    - if @minimum_password_length
-    em= @minimum_password_length 
-    | characters minimum
-    br
-    = f.password_field :password, autocomplete: "off"
+    .form-group
+      Label Password confirmation
+      = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
 
-  .field
-    = f.label :password_confirmation
-    | 
-    = f.password_field :password_confirmation, autocomplete: "off"
-
-  .actions
-    = f.submit "Sign up"
-
-= render "devise/shared/links"
-= link_to "Return to homepage", root_path
+    .actions
+      = f.submit "Sign up", class: 'btn btn-primary'
