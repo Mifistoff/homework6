@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :admins
-  devise_for :users
 
   authenticated :admin do
     namespace :admin do
@@ -31,5 +30,6 @@ Rails.application.routes.draw do
     end
   end
 
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   root 'static_pages#home'
 end
