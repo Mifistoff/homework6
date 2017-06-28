@@ -21,6 +21,7 @@ gem 'bootstrap'
 
 # ===== auth =====
 gem 'devise'
+gem 'omniauth-github', '~> 1.1', '>= 1.1.2'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'
