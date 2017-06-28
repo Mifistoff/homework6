@@ -1,7 +1,8 @@
-h4.text-center Sign up
 div.panel.signup-form-panel
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = form_for(resource, as: resource_name, 
+    url: registration_path(resource_name)) do |f|
     = devise_error_messages!
+    h4.text-center Sign up
 
     .form-group
       Label Email
@@ -11,11 +12,12 @@ div.panel.signup-form-panel
       Label Password
       - if @minimum_password_length
       em= " (#{@minimum_password_length} characters minimum)"
-      = f.password_field :password, autocomplete: "off", class: 'form-control'
+      = f.password_field :password, autocomplete: 'off', class: 'form-control'
 
     .form-group
       Label Password confirmation
-      = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
+      = f.password_field :password_confirmation, autocomplete: 'off', 
+        class: 'form-control'
 
     .actions
-      = f.submit "Sign up", class: 'btn btn-primary'
+      = f.submit 'Sign up', class: 'btn btn-primary'

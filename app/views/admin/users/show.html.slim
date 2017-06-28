@@ -1,12 +1,13 @@
 p#notice=notice
 
-p
-  strong Email:
-  = @user.email
-
-p
-  strong Registration date:
-  = @user.created_at
+h4 User profile
+table.table-striped
+  tr
+    th Email: 
+    td= @user.email
+  tr
+    th Registration: 
+    td= @user.created_at
 
 p And other information...
 

@@ -1,27 +1,23 @@
 p#notice=notice
 
-p
-  strong Title: 
-  = @task.title
-
-p
-  strong Body: 
-  = @task.body
-
-p
-  strong User: 
-  = @task.user.email
-
-p
-  strong Admin: 
-  = @task.supported_admin
-
-p
-  strong Status: 
-  = @task.status
-  = link_to 'Change status', admin_task_path(@task), method: :patch
-
-= link_to 'Back', admin_tasks_path
-
+h4 Task
+table.table-striped
+  tr
+    th.row-name Title: 
+    td.task-title-text= @task.title
+  tr
+    th.row-name Body: 
+    td.task-body-text= @task.body
+  tr
+    th User: 
+    td= @task.user.email
+  tr
+    th Admin: 
+    td= @task.supported_admin
+  tr
+    th Status: 
+    td= @task.status
+= link_to 'Change status', admin_task_path(@task), method: :patch, class: 'btn'
+br
 = render file: 'comments/index'
-= render file: 'admin/comments/new'
+= render file: 'admin/comments/new' if @task.status == 'active'

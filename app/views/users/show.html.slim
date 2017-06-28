@@ -1,11 +1,10 @@
 p#notice=notice
 
-p
-  strong Email: 
-  = current_user.email
-
-p
-  strong Registration: 
-  = current_user.created_at
-
-= link_to 'Back', root_path
+h4 Profile
+table.table-striped
+  tr
+    th Email: 
+    td= current_user.email
+  tr
+    th Registration: 
+    td= current_user.created_at

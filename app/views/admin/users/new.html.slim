@@ -1,16 +1,16 @@
 = form_for :user, url: admin_users_path do |f|
-  h1 New user
+  h4 New user
 
-  p
+  .form-group
     label Email
-    = f.text_field :email
+    p= f.text_field :email
 
-  p
+  .form-group
     label Password
-    = f.text_field :password
+    p= f.text_field :password
 
-  p
+  .form-group
     label Password confirmation
-    = f.text_field :password_confirmation
-
-  p= f.submit
+    p= f.text_field :password_confirmation
+  .actions
+    = f.submit 'Create new user', class: 'btn btn-primary'

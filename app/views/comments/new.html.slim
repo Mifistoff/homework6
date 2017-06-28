@@ -1,3 +1,3 @@
 = form_for([@task, @task.comments.build]) do |f|
-  p= f.text_area :body
-  p= f.submit
+  p= f.text_area :body, rows: 5, cols: 37
+  p= f.submit 'Send', class: 'btn btn-primary'

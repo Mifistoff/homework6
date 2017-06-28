@@ -16,7 +16,6 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/db/seeds.rb
 
 /node_modules
 /yarn-error.log

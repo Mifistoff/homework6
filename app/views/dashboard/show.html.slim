@@ -1,6 +1,11 @@
-= "#{t('you_are_logged_in_as')} #{current_user.email}! "
-= link_to 'Your profile', user_path(current_user)
-= ' '
-= link_to 'Sign out', destroy_user_session_path, method: :delete
-p
-  = link_to 'All tasks', tasks_path
+.log-out-panel.pull-right
+  strong= "#{t('logged_in_as')} #{current_user.email} "
+  = link_to fa_icon('sign-out', text:  'Sign out'), destroy_user_session_path,
+    method: :delete, class: 'btn btn-info btn-square'
+.user-pannel.pull-left
+  = link_to fa_icon('vcard', text: 'Your profile'), user_path(current_user), 
+    class: 'btn btn-info btn-square'
+  = link_to fa_icon('table', text: 'All tasks'), tasks_path,
+    class: 'btn btn-info btn-square'
+  = link_to fa_icon("plus", text: 'New Task'), 
+    new_task_path, class: 'btn btn-info btn-square'

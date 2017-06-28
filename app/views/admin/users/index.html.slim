@@ -1,8 +1,8 @@
 p#notice=notice
 
-h1 Users
-
-table
+h4 Users
+= link_to fa_icon('plus', text:  'Add New'), new_admin_user_path, class: 'btn btn-info'
+table.table.table-responsive.table-striped.table-condensed.table-hover
   thead
     tr
       th Email
@@ -17,6 +17,4 @@ table
         td= user.created_at 
         td= user.tasks.count 
         td= user.comments.count 
-        td= link_to 'Show', "users/#{user.id}" 
-
-= link_to 'Create New User', new_admin_user_path
+        td= link_to fa_icon('search'), "users/#{user.id}" 

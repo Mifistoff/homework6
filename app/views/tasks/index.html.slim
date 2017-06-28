@@ -1,6 +1,7 @@
 p#notice=notice
 
-h1 Tasks
+h4 Tasks
+br
 table.table.table-responsive.table-striped.table-condensed.table-hover
   thead
     tr
@@ -12,11 +13,9 @@ table.table.table-responsive.table-striped.table-condensed.table-hover
   tbody 
   - @tasks.each do |task|
     tr
-      td = task.title
+      td title="#{task.title}" = task.title
       td = task.body
       td = task.user.email
       td = task.supported_admin
       td = task.status
-      td = link_to 'Show', task, class: 'btn btn-info'
-
-br = button_to 'New Task', new_task_path
+      td = link_to fa_icon('search'), task, class: 'btn'

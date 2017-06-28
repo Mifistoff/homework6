@@ -1,10 +1,13 @@
-= "#{t('you_are_logged_in_as')} #{current_admin.email}! "
-= link_to "Your profile", admin_admin_path(current_admin)
-= ' '
-= link_to "Sign out", destroy_admin_session_path, method: :delete
-br
-= link_to "All tasks", admin_tasks_path
-= ' '
-= link_to "Users", admin_users_path
-= ' '
-= link_to "Admins", admin_admins_path
+.log-out-panel.pull-right
+  strong= "#{t('logged_in_as')} #{current_admin.email} "
+  = link_to fa_icon('sign-out', text:  'Sign out'), destroy_admin_session_path,
+    method: :delete, class: 'btn btn-info btn-square'
+.user-pannel.pull-left
+  = link_to fa_icon('vcard', text: 'Your profile'), 
+    admin_admin_path(current_admin), class: 'btn btn-info btn-square'
+  = link_to fa_icon('table', text: 'All tasks'), admin_tasks_path,
+    class: 'btn btn-info btn-square'
+  = link_to fa_icon('users', text: 'Users'), admin_users_path,
+    class: 'btn btn-info btn-square'
+  = link_to fa_icon('wrench', text: 'Admins'), admin_admins_path,
+    class: 'btn btn-info btn-square'

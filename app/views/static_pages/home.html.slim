@@ -2,5 +2,7 @@ div.panel.homepage-panel
   h4.text-center.homepage-title Homepage
   div.container.col-xs-12.col-sm-6.col-md-3.col-lg-3
     .panel.login-buttons-panel    
-      p= button_to "Log In as User ", '/users/sign_in', class: 'btn btn-sm btn-primary btn-block'
-      p= button_to "Log In as Admin", '/admins/sign_in', class: 'btn btn-sm btn-primary btn-block'
+      p= link_to fa_icon('user', text:  'Log In as User'),
+        '/users/sign_in', class: 'btn btn-sm btn-primary btn-block'
+      p= link_to fa_icon('wrench', text: 'Log In as Admin'),
+        '/admins/sign_in', class: 'btn btn-sm btn-primary btn-block'

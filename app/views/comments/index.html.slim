@@ -1,11 +1,11 @@
 p#notice=notice
 
-h1 Comments
-table.col-xs-6.col-sm-4.col-md-2
+h4 Comments
+br
+table.table-striped
   - @task.comments.each do |comment|
     tr
-      th= comment.commentator.email
-
+      th.comment-commenter= comment.commentator.email
     tr
       td
-      td= comment.body
+      td.comment-body= comment.body

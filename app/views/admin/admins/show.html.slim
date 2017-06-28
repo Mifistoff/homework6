@@ -1,13 +1,14 @@
 p#notice=notice
 
-p
-  strong Email: 
-  = @admin.email
-
-p
-  strong Registration date: 
-  = @admin.created_at
-
+h4 Admin profile
+table.table-striped
+  tr
+    th Email: 
+    td= @admin.email
+  tr
+    th Registration: 
+    td= @admin.created_at
+    
 p And other information...
 
 = link_to 'Back', admin_admins_path

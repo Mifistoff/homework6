@@ -9,13 +9,13 @@
        - @task.errors.full_messages.each do |message|
         li= message
 
-  .field 
+  .form-group
     label Title
-    = form.text_field :title
+    p= form.text_field :title, maxlength: 40
 
-  .field
+  .form-group
     label Body
-    = form.text_area :body
+    p= form.text_area :body, rows: 5, cols: 40
 
   .actions
-    = form.submit
+    = form.submit 'Create', class: 'btn btn-primary'

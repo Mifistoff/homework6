@@ -1,7 +1,8 @@
-h4.text-center Log in
+
 div.panel.login-form-panel
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  
+    h4.text-center Log in
+      
     .form-group
       label Email
       = f.email_field :email, autofocus: true, class: 'form-control'

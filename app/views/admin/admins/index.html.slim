@@ -1,8 +1,8 @@
 p#notice=notice
 
-h1 Admins
-
-table
+h4 Admins
+= link_to fa_icon('plus', text:  'Add New'), new_admin_admin_path, class: 'btn btn-info'
+table.table.table-responsive.table-striped.table-condensed.table-hover
   thead
     tr
       th Email
@@ -17,6 +17,4 @@ table
         td= admin.created_at
         td= admin.tasks.count
         td= admin.comments.count
-        td= link_to 'Show', "admins/#{admin.id}"
-
-= link_to 'Create New Admin', new_admin_admin_path
+        td = link_to fa_icon('search'), "admins/#{admin.id}"
